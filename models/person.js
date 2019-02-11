@@ -11,7 +11,7 @@ mongoose
         console.log('connected to MongoDB')
     })
     .catch((error) => {
-        console.log('error connecting to MongoDB:', error.message)
+        console.log('error connection to MongoDB:', error.message)
     })
 
     const personSchema = new mongoose.Schema({
@@ -38,3 +38,5 @@ personSchema.set('toJSON', {
         delete returnedObject.__v
     }
 })
+
+module.exports = mongoose.model('Person', personSchema)
